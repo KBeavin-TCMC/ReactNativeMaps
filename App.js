@@ -8,6 +8,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from './screens/HomeScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import MapScreen from './screens/MapScreen';
+import MapScreenTwo from './screens/MapScreenTwo';
 
 const Stack = createStackNavigator();
 
@@ -23,6 +24,8 @@ const App: () => React$Node = () => {
           />
           <Stack.Screen name="Profile" component={ProfileScreen} />
           <Stack.Screen name="Map" component={MapScreen} />
+          <Stack.Screen name="Map2" component={MapScreenTwo} />
+
         </Stack.Navigator>
       </NavigationContainer>
 

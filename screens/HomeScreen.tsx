@@ -18,10 +18,16 @@ const HomeScreen = ({ navigation }) => {
                     navigation.navigate('Map')
                 }
             />
+            <Button
+                title="Go to the Map2"
+                onPress={() =>
+                    navigation.navigate('Map2')
+                }
+            />
             <Text>{config.REACT_APP_API_KEY}</Text>
             <Text>{config.MAP_KEY}</Text>
         </View>
     );
-  };
+};
 
 export default HomeScreen;
