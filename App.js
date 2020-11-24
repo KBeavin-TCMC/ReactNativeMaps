@@ -9,6 +9,7 @@ import HomeScreen from './screens/HomeScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import MapScreen from './screens/MapScreen';
 import MapScreenTwo from './screens/MapScreenTwo';
+import MapScreenThree from './screens/MapScreenThree';
 
 const Stack = createStackNavigator();
 
@@ -25,6 +26,7 @@ const App: () => React$Node = () => {
           <Stack.Screen name="Profile" component={ProfileScreen} />
           <Stack.Screen name="Map" component={MapScreen} />
           <Stack.Screen name="Map2" component={MapScreenTwo} />
+          <Stack.Screen name="Map3" component={MapScreenThree} />
 
         </Stack.Navigator>
       </NavigationContainer>

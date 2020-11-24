@@ -4,31 +4,13 @@ import MapView, { PROVIDER_GOOGLE, Marker, Polyline } from 'react-native-maps';
 import CustomMarker from '../components/CustomMarker';
 
 const MapScreenTwo = ({ navigation }) => {
-
     const [region, setRegion] = useState({
         latitude: 39.959049,
         longitude: -86.146629,
         latitudeDelta: 0.01,
         longitudeDelta: 0.01,
     });
-
-    const _map = useRef(null);
-
-    useEffect(() => {
-        if (_map.current) {
-            _map.current.animateCamera(
-                {
-                    center: {
-                        latitude: 39.959049,
-                        longitude: -86.146629
-                    },
-                    zoom: 15
-                },
-                5000
-            );
-        }
-    }, []);
-
+    
     const mapStyle = [
         {
             elementType: "geometry",
@@ -83,16 +65,33 @@ const MapScreenTwo = ({ navigation }) => {
             ]
         }
     ];
-
+    
     const Speedway = {
         latitude: 39.7927,
         longitude: -86.2508
     };
-
+    
     const Fishers = {
         latitude: 39.9568,
         longitude: -86.0134
     };
+
+    const _map = useRef(null);
+
+    useEffect(() => {
+        if (_map.current) {
+            _map.current.animateCamera(
+                {
+                    center: {
+                        latitude: 39.760101,
+                        longitude: -86.163887
+                    },
+                    zoom: 15
+                },
+                5000
+            );
+        }
+    }, []);
 
     return (
         <View style={styles.container}>
@@ -103,6 +102,7 @@ const MapScreenTwo = ({ navigation }) => {
                     region={region}
                     onRegionChangeComplete={region => setRegion(region)}
                     customMapStyle={mapStyle}
+                    onPress={onMapPress}
                 >
 
                     <Marker coordinate={{ latitude: 39.959049, longitude: -86.146629 }} pinColor="green" />
@@ -119,6 +119,17 @@ const MapScreenTwo = ({ navigation }) => {
         </View>
     );
 };
+
+const onMapPress = ((coords) => {
+    let lat = coords.nativeEvent.coordinate.latitude;
+    let lng = coords.nativeEvent.coordinate.longitude;
+    console.log(lat);
+    console.log(lng);
+
+    return (
+        <Marker coordinate={{latitude: lat, longitude: lng}} pinColor="red"/> 
+    )
+});
 
 const styles = StyleSheet.create({
     container: {
