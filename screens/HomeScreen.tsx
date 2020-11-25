@@ -15,7 +15,7 @@ const HomeScreen = ({ navigation }) => {
             </View>
             <View style={styles.homeButtons}>
                 <Button
-                    title="Go to the Map"
+                    title="Just a Map"
                     onPress={() =>
                         navigation.navigate('Map')
                     }
@@ -23,7 +23,7 @@ const HomeScreen = ({ navigation }) => {
             </View>
             <View style={styles.homeButtons}>
                 <Button
-                    title="Go to the Map2"
+                    title="Styled Map"
                     onPress={() =>
                         navigation.navigate('Map2')
                     }
@@ -31,7 +31,7 @@ const HomeScreen = ({ navigation }) => {
             </View>
             <View style={styles.homeButtons}>
                 <Button
-                    title="Go to the Map3"
+                    title="Place Markers"
                     onPress={() =>
                         navigation.navigate('Map3')
                     }
